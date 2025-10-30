@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python y Lenguaje Natural</title>
+    <title>guzman lopez nayer davis</title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Catalog Section */
+        .catalog {
+            background: #f5f7fa;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+
+        .catalog-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+        }
+
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .catalog-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🐍 Python y Lenguaje Natural</h1>
+            <p>Explora herramientas de procesamiento de texto con Python</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog">
+        <h2 class="catalog-title">Catálogo de Tareas</h2>
+        <div class="cards-container">
+            
+            <!-- Card 1: Tokens -->
+            <div class="card">
+                <div class="card-image">🔤</div>
+                <div class="card-content">
+                    <h3 class="card-title">Tokenización</h3>
+                    <p class="card-description">Divide texto en tokens individuales (palabras, oraciones). Ideal para preprocesamiento y análisis textual básico.</p>
+                    <a href="tokens.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Longitud -->
+            <div class="card">
+                <div class="card-image">📏</div>
+                <div class="card-content">
+                    <h3 class="card-title">Análisis de Longitud</h3>
+                    <p class="card-description">Calcula estadísticas de longitud de palabras, oraciones y documentos. Útil para análisis de complejidad textual.</p>
+                    <a href="longitud.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Frecuencia -->
+            <div class="card">
+                <div class="card-image">📊</div>
+                <div class="card-content">
+                    <h3 class="card-title">Frecuencia de Palabras</h3>
+                    <p class="card-description">Analiza la frecuencia de aparición de palabras en textos. Genera visualizaciones y métricas estadísticas.</p>
+                    <a href="frecuencia.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+            <!-- Card 4: For -->
+            <div class="card">
+                <div class="card-image">🔄</div>
+                <div class="card-content">
+                    <h3 class="card-title">Bucles FOR</h3>
+                    <p class="card-description">Ejemplos de iteración sobre textos usando bucles. Procesamiento secuencial de elementos textuales.</p>
+                    <a href="for.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+            <!-- Card 5: Análisis de Sentimiento -->
+            <div class="card">
+                <div class="card-image">😊</div>
+                <div class="card-content">
+                    <h3 class="card-title">Análisis de Sentimiento</h3>
+                    <p class="card-description">Clasifica textos según su polaridad emocional (positivo, negativo, neutral). Usa técnicas de PLN.</p>
+                    <a href="analisis_de_sentimientos.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+            <!-- Card 6: Buscar -->
+            <div class="card">
+                <div class="card-image">🔍</div>
+                <div class="card-content">
+                    <h3 class="card-title">Búsqueda de Texto</h3>
+                    <p class="card-description">Implementa búsquedas avanzadas en corpus de texto. Incluye expresiones regulares y coincidencias.</p>
+                    <a href="buscar.py" class="download-btn">descargar</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function downloadCode(taskName) {
+            // Códigos de ejemplo para cada tarea
+            const codes = {
+                tokens: `# Tokenización de Texto
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+texto = "Python es genial. Me encanta programar."
+palabras = word_tokenize(texto)
+oraciones = sent_tokenize(texto)
+
+print("Palabras:", palabras)
+print("Oraciones:", oraciones)`,
+                
+                longitud: `# Análisis de Longitud
+texto = "Hola mundo desde Python"
+palabras = texto.split()
+
+longitud_palabras = [len(p) for p in palabras]
+promedio = sum(longitud_palabras) / len(longitud_palabras)
+
+print(f"Longitud promedio: {promedio:.2f}")`,
+                
+                frecuencia: `# Frecuencia de Palabras
+from collections import Counter
+
+texto = "python es genial python es poderoso"
+palabras = texto.lower().split()
+frecuencias = Counter(palabras)
+
+print("Frecuencias:", frecuencias.most_common(5))`,
+                
+                for: `# Bucles FOR en Texto
+texto = "Python es asombroso"
+
+for letra in texto:
+    print(letra)
+
+for palabra in texto.split():
+    print(f"Palabra: {palabra}, Longitud: {len(palabra)}")`,
+                
+                sentimiento: `# Análisis de Sentimiento
+from textblob import TextBlob
+
+texto = "Me encanta Python, es increíble"
+blob = TextBlob(texto)
+polaridad = blob.sentiment.polarity
+
+if polaridad > 0:
+    print("Sentimiento: Positivo")
+elif polaridad < 0:
+    print("Sentimiento: Negativo")
+else:
+    print("Sentimiento: Neutral")`,
+                
+                buscar: `# Búsqueda de Texto
+import re
+
+texto = "Python 3.9 es mejor que Python 2.7"
+patron = r"Python \\d\\.\\d"
+coincidencias = re.findall(patron, texto)
+
+print("Versiones encontradas:", coincidencias)`
+            };
+
+            const code = codes[taskName];
+            const blob = new Blob([code], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${taskName}.py`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Smooth scroll
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.catalog').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

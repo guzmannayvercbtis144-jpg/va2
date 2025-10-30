@@ -1,0 +1,305 @@
+movimientos.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema con Código y Glosario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tema-titulo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tema-titulo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .tema-titulo p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .code-container {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .code-container pre {
+            margin: 0;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .code-container code {
+            display: block;
+        }
+
+        .keyword { color: #ff79c6; }
+        .function { color: #50fa7b; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; }
+        .number { color: #bd93f9; }
+
+        .glosario-item {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glosario-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .glosario-item h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .glosario-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .parametros {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .parametros strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .parametros code {
+            background: #2d3748;
+            color: #50fa7b;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .tema-titulo h2 {
+                font-size: 1.5em;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Realizado por: GUZMAN LOPEZ NAYVER DAVIS</h1>
+            <p>Especialidad de IA del CBTIS 144</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="tema-titulo">
+                <h2>Tema 1: Funciones en Python</h2>
+                <p>Creación y uso de funciones personalizadas</p>
+            </div>
+
+            <div class="section">
+                <h3>📝 Código del Ejemplo</h3>
+                <div class="code-container">
+                    <pre>
+import cv2
+imagem = cv2.imread("gatito.jpg")
+imagem_copy = imagem.copy()
+angulo = 0
+
+while True:
+    cv2.imshow("gatito", imagem_copy)
+    tecla = cv2.waitKey(0)
+    if tecla == ord('w') or tecla == ord('W'):
+        angulo += 90
+    elif tecla == ord('a') or tecla == ord('A'):
+        angulo += 80
+    elif tecla == ord('s') or tecla == ord('S'):
+        angulo += 60
+    elif tecla == ord('d') or tecla == ord('D'):
+        angulo += 180
+    elif tecla == ord('x') or tecla == ord('X'):
+        break
+    elif tecla == 27:  # ESC
+        break
+    (h, w) = imagem.shape[:2]
+    centro = (w // 2, h // 2)
+    c_rotacion = cv2.getRotationMatrix2D(centro, angulo, 1.0)
+    imagem_copy = cv2.warpAffine(imagem, c_rotacion, (w, h))
+
+cv2.destroyAllWindows()
+                    </pre>
+                </div>
+            </div>
+
+            <div class="section">
+          <h3>📚 Glosario de Funciones</h3>
+
+                <div class="glosario-item">
+                    <h4>cv2.imread(filename)</h4>
+                    <p>Lee una imagen desde un archivo y la carga en memoria como un array de NumPy. Retorna la imagen en formato BGR (Blue, Green, Red).</p>
+                    <div class="parametros">
+                        <strong>Parámetros:</strong>
+                        <code>filename</code>: Ruta del archivo de imagen a cargar
+                    </div>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>cv2.imshow(window_name, image)</h4>
+                    <p>Muestra una imagen en una ventana con el nombre especificado. Crea automáticamente la ventana si no existe.</p>
+                    <div class="parametros">
+                        <strong>Parámetros:</strong>
+                        <code>window_name</code>: Nombre de la ventana<br>
+                        <code>image</code>: Imagen a mostrar
+                    </div>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>cv2.waitKey(delay)</h4>
+                    <p>Espera que el usuario presione una tecla durante el tiempo especificado en milisegundos. Si delay=0, espera indefinidamente. Retorna el código ASCII de la tecla presionada.</p>
+                    <div class="parametros">
+                        <strong>Parámetros:</strong>
+                        <code>delay</code>: Tiempo de espera en milisegundos (0 = indefinido)
+                    </div>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>cv2.getRotationMatrix2D(center, angle, scale)</h4>
+                    <p>Calcula la matriz de transformación afín para rotar una imagen alrededor de un punto específico.</p>
+                    <div class="parametros">
+                        <strong>Parámetros:</strong>
+                        <code>center</code>: Punto (x, y) alrededor del cual rotar<br>
+                        <code>angle</code>: Ángulo de rotación en grados (positivo = antihorario)<br>
+                        <code>scale</code>: Factor de escala (1.0 = tamaño original)
+                    </div>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>cv2.warpAffine(src, M, dsize)</h4>
+                    <p>Aplica una transformación afín a una imagen, como rotación, traslación o cambio de escala.</p>
+                    <div class="parametros">
+                        <strong>Parámetros:</strong>
+                        <code>src</code>: Imagen de entrada<br>
+                        <code>M</code>: Matriz de transformación 2x3<br>
+                        <code>dsize</code>: Tamaño de la imagen de salida (ancho, alto)
+                    </div>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>cv2.destroyAllWindows()</h4>
+                    <p>Cierra todas las ventanas abiertas por OpenCV y libera los recursos asociados a ellas.</p>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>.copy()</h4>
+                    <p>Método que crea una copia independiente de la imagen. Útil para preservar la imagen original mientras se realizan modificaciones.</p>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>.shape</h4>
+                    <p>Propiedad que retorna las dimensiones del array de la imagen en formato (altura, ancho, canales). [:2] obtiene solo altura y ancho.</p>
+                </div>
+
+                <div class="glosario-item">
+                    <h4>ord(character)</h4>
+                    <p>Función de Python que convierte un carácter en su código ASCII numérico.</p>
+                    <div class="parametros">
+                        <strong>Ejemplo:</strong>
+                        <code>ord('w')</code> retorna 119
+                    </div>
+                </div>
+            </div>
+</html>
